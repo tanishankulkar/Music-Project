@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" href="requestmusic.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Music</title>
+</head>
+<body>
+        <form action="HOME.html" style="display: inline-block;">
+        <button>HOME</button>
+        </form>
+        <form action="MUSIC.html" style="display: inline-block;">
+        <button>MUSIC</button>
+        </form>
+        <form action="ARTISTS.html" style="display: inline-block;">
+        <button>ARTISTS</button>
+        </form>
+        <form action="ABOUT.html" style="display: inline-block;">
+        <button>ABOUT</button>
+        </form>
+        <form action="CONTACT.html" style="display: inline-block;">
+        <button>CONTACT</button>
+        </form>
+
+    <h1>Add Music</h1>
+    <form id="musicForm" enctype="multipart/form-data">
+        <label  for="title">Title:</label>
+        <input type="text" id="title" name="title" required><br><br>
+        
+        <label  for="artist">Artist:</label>
+        <input type="text" id="artist" name="artist" required><br><br>
+        
+        <label  for="genre">Genre:</label>
+        <input type="text" id="genre" name="genre" required><br><br>
+
+        <button id="submit1" type="submit">Add Music</button>
+    </form>
+    <p id="musicRequest"></p>
+<script>
+      document.getElementById('musicForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent the form from refreshing the page
+
+        var musicData = new FormData(this); // Get the form data
+
+        fetch('https://script.google.com/macros/s/AKfycbyE5UN4-Hj0zKdCOHH3oTtuhIPaZEU8l9tOS_GJh8dVFE8F6GljzIDemA3C1A1dX5hyKg/exec', { // Replace with your script URL
+            method: 'POST',
+            body: musicData,
+            headers: {
+                'Accept': 'application/json',
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json(); // Parse the response as JSON
+        })
+        .then(data => {
+            if (data.result === 'success') {
+                document.getElementById('musicRequest').innerText = 'Your message has been sent!';
+                document.getElementById('musicForm').reset(); // Reset the form
+                setTimeout(function() {
+                        location.reload(); // Reload the page after a brief delay
+                    }, 2000);
+            } else {
+                document.getElementById('musicRequest').innerText = 'There was an error sending your message: ' + (data.message || 'Unknown error');
+            }
+        })
+        .catch(error => {
+            document.getElementById('musicRequest').innerText = 'Message send successfully ';
+            setTimeout(function() {
+                        location.reload(); // Reload the page after a brief delay
+                    }, 2000);
+            console.error('Error:', error);
+        });
+    });
+</script>
+</body>
+</html>

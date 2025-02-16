@@ -1,0 +1,24 @@
+html {
+  height: 100%;
+  width: 100%;
+}  
+#menu {
+    text-align: right;
+  }
+h2 {
+    margin-right:100px ;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 200px;
+    
+    font-size: 2em;
+}
+body {
+  background: linear-gradient(to bottom, #42d0ff 0%, #3ddb48 100%);
+}
+img {
+  border: 1px solid black;
+}
+button{
+ background-color: red;
+}

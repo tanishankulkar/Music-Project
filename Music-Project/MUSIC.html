@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="MUSIC.css">
+  </head>
+<body>
+  <form action="HOME.html" style="display: inline-block;">
+    <button>HOME</button>
+    </form>
+    <form action="MUSIC.html" style="display: inline-block;">
+    <button>MUSIC</button>
+    </form>
+    <form action="ARTISTS.html" style="display: inline-block;">
+    <button>ARTISTS</button>
+    </form>
+    <form action="ABOUT.html" style="display: inline-block;">
+    <button>ABOUT</button>
+    </form>
+    <form action="CONTACT.html" style="display: inline-block;">
+    <button>CONTACT</button>
+    </form>
+
+  <h4>Hip Hop Music</h4>
+  <div id="Music">
+  <p>The hop music era features a ton of different forms of hip hop. The most popular is rap or fast paced singing. Along with this diss tracks are also very popular. Diss tracks are mostly rap wars were two artists are in an argument and they use rap to prove that they are better, or the other artist in worse. Below are some samples of hip hop music.</p><br> <br>
+     </div>
+    <div style="text-align: left;">
+      <p id="NLU">Not Like Us</p>
+    <button id="NL" type="button" onclick="playFunction1()">Play</button>
+    <button id="NL" type="button" onclick="pauseFunction1()">Pause</button>
+    <audio id="testaud1" width=400 height=200>
+      <source src="NotLikeUs.mp3" type="audio/mp3">
+      Test
+    </video>
+    <script>
+    var homeAud1 = document.getElementById("testaud1")
+      function playFunction1(){
+        homeAud1.play()
+      }
+      function pauseFunction1(){
+        homeAud1.pause()
+      }
+    </script>
+    </div>
+     
+      <div>
+        <p id="MDP">Mathematical Disrespect</p>
+      <button id="MD" type="button" onclick="playFunction()">Play</button>
+      <button id="MD" type="button" onclick="pauseFunction()">Pause</button>
+      <audio id="testaud" width=400 height=200>
+        <source src="MathematicalDisrespect.mp3" type="audio/mp3">
+        Test
+      </video>
+      <script>
+      var homeAud = document.getElementById("testaud")
+        function playFunction(){
+          homeAud.play()
+        }
+        function pauseFunction(){
+          homeAud.pause()
+        }
+      </script>
+      </div>
+  <div>
+    <p id="NLU2">Just Wanna Rock</p>
+  <button id="NL2" type="button" onclick="playFunction2()">Play</button>
+  <button id="NL2" type="button" onclick="pauseFunction2()">Pause</button>
+  <audio id="testaud2" width=400 height=200>
+    <source src="JustWannaRock.mp3" type="audio/mp3">
+    Test
+  </video>
+  <script>
+  var homeAud2 = document.getElementById("testaud2")
+    function playFunction2(){
+      homeAud2.play()
+    }
+    function pauseFunction2(){
+      homeAud2.pause()
+    }
+  </script>
+  </div>
+  <br>
+  <br>
+    <form action="requestmusic.html" style="display: inline-block;">
+      <button>Click to request music</button>
+      </form>
+    
+  
+ 
+  
+
+ 
+  <div style="text-align: center;">
+    <img src="mic.jpg" height="100" width="100" style="margin-left: 400px; transform: rotate(10deg);" />
+<br>
+   
+    
+    <img src="musicnote.jpg" height="100" width="100" style="margin-right: 400px; transform: rotate(10deg);" />
+    <br><br><br><br>
+    
+</body>
+</html>
