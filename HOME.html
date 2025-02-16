@@ -1,0 +1,49 @@
+<html>
+<head>
+  <link rel="stylesheet" href="HOME.css">
+</head>
+<body>
+  <form action="HOME.html" style="display: inline-block;">
+    <button>HOME</button>
+    </form>
+    <form action="MUSIC.html" style="display: inline-block;">
+    <button>MUSIC</button>
+    </form>
+    <form action="ARTISTS.html" style="display: inline-block;">
+    <button>ARTISTS</button>
+    </form>
+    <form action="ABOUT.html" style="display: inline-block;">
+    <button>ABOUT</button>
+    </form>
+    <form action="CONTACT.html" style="display: inline-block;">
+    <button>CONTACT</button>
+    </form>
+  <script>
+
+    const bitwiseAND = (a, b) => {
+      return a & b;
+    };
+    function bitwiseAND(a, b) {
+      return a & b;
+    }
+    const menu = document.getElementById('menu');
+    const menuItems = menu.querySelectorAll('button');
+
+    menuItems.forEach(item => {
+      item.addEventListener('click', () => {
+        window.location.href = item.parentElement.action;
+      });
+    });
+  </script>
+  <div id = "menu">
+    
+  
+     
+  </div>
+<h2>THE HIP HOP MUSIC ERA</h1> <br><br>
+
+  <img style="width: 30%; transform: rotate(-10deg);" src="UZI.webp" alt="UZI">
+  <img style="width: 30%; transform: rotate(10deg);" src="WAYNE.webp" alt="WAYNE"> 
+  <img style="width: 30%; transform: rotate(-10deg);" src="DURK.jpg" alt="DURK"> 
+</body>
+</html>

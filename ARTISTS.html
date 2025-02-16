@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+    
+    const artistData = [
+        {
+            name: "Lil Mabu",
+            genre: "Rap",
+            image: "LIL-MABU-.webp",
+            profileLink: "MABU.html"
+        },
+        {
+            name: "Kendrick Lamar",
+            genre: "Rap/Diss Tracks",
+            image: "KENDRICK.jpg",
+            profileLink: "KENDRICK.html"
+        },
+        {
+            name: "Juice WRLD",
+            genre: "Hip-Hop/Rap",
+            image: "JUICEWRLD.webp",
+            profileLink: "JUICE.html"
+        }
+    ];
+
+    const artistGrid = document.querySelector('.artist-grid');
+
+    artistData.map(artist => {
+        const artistDiv = document.createElement('div');
+        artistDiv.classList.add('artist');
+
+        const img = document.createElement('img');
+        img.src = artist.image;
+        img.style.width = '200px';
+        img.style.height = '200px';
+        artistDiv.appendChild(img);
+
+        const artistName = document.createElement('h3');
+        artistName.textContent = artist.name;
+        artistDiv.appendChild(artistName);
+
+        const genre = document.createElement('p');
+        genre.textContent = `Genre: ${artist.genre}`;
+        artistDiv.appendChild(genre);
+
+        const profileForm = document.createElement('form');
+        profileForm.action = artist.profileLink;
+        profileForm.id = 'center';
+        profileForm.style.display = 'inline-block';
+
+        const profileButton = document.createElement('button');
+        profileButton.textContent = 'View Profile';
+        profileForm.appendChild(profileButton);
+
+        artistDiv.appendChild(profileForm);
+
+        artistGrid.appendChild(artistDiv);
+    });
+</script>
+
+    <title>Music Artists</title>
+    <link rel="stylesheet" href="ARTISTS.css">
+</head>
+<body>
+    <form action="HOME.html" style="display: inline-block;">
+        <button>HOME</button>
+        </form>
+        <form action="MUSIC.html" style="display: inline-block;">
+        <button>MUSIC</button>
+        </form>
+        <form action="ARTISTS.html" style="display: inline-block;">
+        <button>ARTISTS</button>
+        </form>
+        <form action="ABOUT.html" style="display: inline-block;">
+        <button>ABOUT</button>
+        </form>
+        <form action="CONTACT.html" style="display: inline-block;">
+        <button>CONTACT</button>
+        </form>
+    <header>
+        <h1>Music Artists</h1>
+    </header>
+    <main>
+        <section class="artists">
+            <h2>Featured Artists</h2>
+            <div class="artist-grid">
+                <div class="artist">
+                    <img src="LIL-MABU-.webp" style="width: 200px; height: 200px;">
+                    <h3>Lil Mabu</h3>
+                    <p>Genre: Rap</p>
+                     <form action="MABU.html" id="center" style="display: inline-block;">
+                         <button>View Profile</button>
+                         </form>
+                </div>
+                <br>
+                <br>
+                <div class="artist">
+                    <img src="KENDRICK.jpg" alt="Artist 2">
+                    <h3>Kendrick Lamar</h3>
+                    <p>Genre: Rap/Diss Tracks</p>
+                    <form action="KENDRICK.html" id="center" style="display: inline-block;">
+                        <button>View Profile</button>
+                        </form>
+                </div>
+                <br>
+                <br>
+                <div class="artist">
+                    <img src="JUICEWRLD.webp" alt="Artist 3" style="width: 200px; height: 200px;">
+                    <h3>Juice WRLD</h3>
+                    <p>Genre: Hip-Hop/Rap</p>
+                     <form action="JUICE.html" id="center" style="display: inline-block;">
+                         <button>View Profile</button>
+                         </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <br>
+   
+
+</body>
+</html>

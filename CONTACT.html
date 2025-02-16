@@ -1,0 +1,128 @@
+<html>
+<head>
+<link rel="stylesheet" href="CONTACT.css">
+<title>Form Submission</title>
+</head>
+<body>
+  <form action="HOME.html" style="display: inline-block;">
+    <button>HOME</button>
+    </form>
+    <form action="MUSIC.html" style="display: inline-block;">
+    <button>MUSIC</button>
+    </form>
+    <form action="ARTISTS.html" style="display: inline-block;">
+    <button>ARTISTS</button>
+    </form>
+    <form action="ABOUT.html" style="display: inline-block;">
+    <button>ABOUT</button>
+    </form>
+    <form action="CONTACT.html" style="display: inline-block;">
+    <button>CONTACT</button>
+    </form>
+    
+<h2>Enter Your Information</h2>
+
+<form id="contactForm" onsubmit="mySubmit()">
+  <label for="name">Name:</label><br>
+  <input type="name" id="name" name="name" required><br><br>
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email" required><br><br>
+  <label for="message" >Inquiry:</label><br>
+  <input type="text" id="message" name="message" required><br>
+  <input type="submit" value="submit">
+</form><br>
+  Reason for Inquiry<br>
+  <select id="select" onchange="myChange()">
+    <option value="Feedback">Feedback</option>
+    <option value="Recommendations">Recommendations</option>
+    <option value="Questions">Questions</option>
+  </select>
+  <p id="formResponse"></p>
+<script>
+   document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent the form from refreshing the page
+
+        var formData = new FormData(this); // Get the form data
+
+        fetch('https://script.google.com/macros/s/AKfycbzkfUmBtFgxQS9FWCaMWPcwtb9ZuI0eFKRl6JeIYjHTIAhkDbvrJGbxKPeIIZUs7eK3/exec', { // Replace with your script URL
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json',
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json(); // Parse the response as JSON
+        })
+        .then(data => {
+            if (data.result === 'success') {
+                document.getElementById('formResponse').innerText = 'Your message has been sent!';
+                document.getElementById('contactForm').reset(); // Reset the form
+                setTimeout(function() {
+                        location.reload(); // Reload the page after a brief delay
+                    }, 2000);
+            } else {
+                document.getElementById('formResponse').innerText = 'There was an error sending your message: ' + (data.message || 'Unknown error');
+            }
+        })
+        .catch(error => {
+            document.getElementById('formResponse').innerText = 'Message send successfully ';
+            setTimeout(function() {
+                        location.reload(); // Reload the page after a brief delay
+                    }, 2000);
+            console.error('Error:', error);
+        });
+    });
+</script>
+<script>
+  function validateForm1() {
+    let x = document.forms["myForm"]["email"].value;
+    if (x == "") {
+      alert("Email must be filled out");
+      return false;
+    }
+  }
+    function validateForm2() {
+    let x = document.forms["myForm"]["enquiry"].value;
+    if (x == "") {
+      alert("Enquiry must be filled out");
+      return false;
+    }
+  }
+  function validateForm3() {
+    let x = document.forms["myForm"]["name"].value;
+    if (x == "") {
+      alert("First Name must be filled out");
+      return false;
+    }
+  }
+  function myChange() {
+    var changer = document.getElementById("select").value;
+    document.getElementById("demo").innerHTML = "You selected: " + changer;
+  }
+
+function mySubmit(){
+  alert("The form was submitted");
+}
+
+document.getElementById("myForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  // Get form values
+  var enquiry = document.getElementById("enquiry").value;
+  var email = document.getElementById("email").value;
+
+  // Construct URL with form data
+  var url = "messages.html?" + "enquiry=" + encodeURIComponent(enquiry) + "&email=" + encodeURIComponent(email);
+
+  // Redirect to new page with form data
+  window.location.href = url;
+});
+</script>
+ 
+
+</body>
+</html>

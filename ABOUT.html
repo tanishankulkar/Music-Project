@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" href="ABOUT.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <form action="HOME.html" style="display: inline-block;">
+        <button>HOME</button>
+        </form>
+        <form action="MUSIC.html" style="display: inline-block;">
+        <button>MUSIC</button>
+        </form>
+        <form action="ARTISTS.html" style="display: inline-block;">
+        <button>ARTISTS</button>
+        </form>
+        <form action="ABOUT.html" style="display: inline-block;">
+        <button>ABOUT</button>
+        </form>
+        <form action="CONTACT.html" style="display: inline-block;">
+        <button>CONTACT</button>
+        </form>
+   
+    <div class="container">
+        <h1>About Us</h1>
+        <p>This website is dedicated to the contribution of hip hop music to today's society. Along with this, the website can be used to gain a basic understanding of hip hop music in todays society. Click the buttons below to go back to the home page at any time.  </p>
+    </div>
+    <div class="container">
+        <p>Use the buttons below to go back to any of the pages. Each page has a small interactive feature that uses buttons to be activated.</p>
+    </div>
+      
+   
+    <script>
+       
+
+        const regex = /hello/i;
+        const text = "Music!";
+        if (regex.test(text)) {
+            console.log("Match found!");
+        } else {
+            console.log("No match found.");
+        }
+
+        class MyClass {
+            constructor(name) {
+                this.name = name;
+            }
+
+            sayHello() {
+                console.log(`Hello, ${this.name}!`);
+            }
+        }
+
+        const myInstance = new MyClass('Tanish');
+        myInstance.sayHello();
+
+    </script>
+    <button id="interactive-button">Click Me</button>
+
+</body>
+</html>

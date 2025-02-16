@@ -1,0 +1,21 @@
+body{
+  background: linear-gradient(to bottom, #ff0000 0%, #cd641d 100%);
+}
+
+#NL{
+  background-color: crimson;
+}
+
+#MD{
+  background-color: gold;
+}
+
+#NL2{
+  background-color: darkorange;
+}
+h4{
+  text-align: center;
+}
+button{
+ background-color: lime;
+}
